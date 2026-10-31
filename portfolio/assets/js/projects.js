@@ -340,7 +340,6 @@ const PROJECTS = [
     title: 'Holo Tactical Viewer',
     org: 'Reply for a defence company',
     category: 'professional',
-    wip: true,
     summary: 'A mixed-reality simulator for missile systems over a realistic scaled 3D map.',
     role: 'Built the core features for the proof of concept.',
     tech: ['Unity', 'C#'],
