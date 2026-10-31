@@ -33,7 +33,7 @@ const PROJECTS = [
     image: 'assets/images/projects/golfbattle.webp',
     imageAlt: 'Golf Battle key art: golf balls flying toward the flag on a low-poly mini golf green',
     summary: 'Fast, physics-based multiplayer mini golf for mobile.',
-    role: 'Acted as lead of the client team, maintaining the live game and building new features on top of real-time multiplayer, player customization and in-app purchases.',
+    role: 'Owned the project, maintaining the live game and building new features on top of real-time multiplayer, player customization and in-app purchases.',
     tech: ['Unity', 'C#'],
     platforms: ['Android', 'iOS'],
     tags: ['Mobile'],
