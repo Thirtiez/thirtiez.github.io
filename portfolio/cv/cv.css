@@ -1,0 +1,243 @@
+/* ---------- Tokens (light print counterpart of ../assets/css/main.css) ---------- */
+:root {
+    --bg: #ffffff;
+    --desk: #e4e6eb;
+    --text: #15171c;
+    --muted: #5b616e;
+    --border: #dfe2e8;
+    --accent: #c6f432;
+    --accent-text: #4d6b00;
+
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --page-w: 210mm;
+    --page-h: 297mm;
+    --pad-x: 15mm;
+    --pad-y: 13mm;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+body {
+    margin: 0;
+    background: var(--desk);
+    color: var(--text);
+    font: 400 9.7pt/1.48 var(--font-body);
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+dl,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+strong {
+    font-weight: 600;
+}
+
+/* ---------- Sheet ---------- */
+.sheet {
+    width: var(--page-w);
+    height: var(--page-h);
+    margin: 24px auto;
+    padding: var(--pad-y) var(--pad-x);
+    background: var(--bg);
+    box-shadow: 0 6px 30px rgb(0 0 0 / 0.12);
+    overflow: hidden;
+}
+
+@media print {
+    body {
+        background: var(--bg);
+    }
+
+    .sheet {
+        margin: 0;
+        box-shadow: none;
+    }
+}
+
+/* ---------- Header ---------- */
+/* Space Grotesk loses its word spaces in Chrome PDFs, so keyword-bearing
+   headings (role, job titles) use Inter; only the name keeps the display font. */
+.cv-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8mm;
+    padding-bottom: 5mm;
+    border-bottom: 2.5px solid var(--accent);
+}
+
+.cv-name {
+    font: 700 26pt/1.05 var(--font-display);
+    letter-spacing: -0.02em;
+}
+
+.cv-role {
+    margin-top: 1.5mm;
+    font: 600 11pt/1.3 var(--font-body);
+    color: var(--accent-text);
+}
+
+.cv-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6mm 0;
+    margin-top: 3mm;
+    font-size: 8.6pt;
+    color: var(--muted);
+}
+
+.cv-contact li:not(:last-child)::after {
+    content: "·";
+    margin: 0 2mm;
+    color: var(--border);
+    font-weight: 600;
+}
+
+.cv-contact a:hover {
+    color: var(--text);
+}
+
+.cv-photo {
+    flex: none;
+    width: 27mm;
+    height: 27mm;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 1.5mm var(--bg), 0 0 0 2mm var(--accent);
+}
+
+/* ---------- Sections ---------- */
+.cv-section {
+    margin-top: 6mm;
+}
+
+.cv-label {
+    display: flex;
+    align-items: center;
+    gap: 2.5mm;
+    margin-bottom: 2.2mm;
+    font: 500 8pt/1 var(--font-mono);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.cv-label::before {
+    content: "";
+    width: 3mm;
+    height: 3mm;
+    border-radius: 0.6mm;
+    background: var(--accent);
+}
+
+.cv-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.cv-summary {
+    font-size: 9.8pt;
+}
+
+/* ---------- Experience ---------- */
+.job+.job {
+    margin-top: 3.8mm;
+}
+
+.job-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 4mm;
+}
+
+.job-role {
+    font: 600 10.2pt/1.3 var(--font-body);
+}
+
+.job-org {
+    font-weight: 500;
+    color: var(--muted);
+}
+
+.job-date {
+    flex: none;
+    font: 500 8pt/1 var(--font-mono);
+    color: var(--muted);
+}
+
+/* Native markers, not positioned pseudo-elements: positioned boxes get painted
+   after the rest of the page, which scrambles the PDF's text order for ATS. */
+.job-points {
+    margin-top: 1mm;
+    padding-left: 4mm;
+    list-style: disc;
+}
+
+.job-points li+li {
+    margin-top: 0.6mm;
+}
+
+.job-points li::marker {
+    color: var(--accent-text);
+}
+
+/* ---------- Label / value rows (skills, education) ---------- */
+/* Key and value share one text line so parsers read them together. */
+.rows li {
+    padding-left: 32mm;
+    text-indent: -32mm;
+}
+
+.rows li+li {
+    margin-top: 1mm;
+}
+
+.row-key {
+    display: inline-block;
+    width: 32mm;
+    text-indent: 0;
+    font-weight: 600;
+}
+
+.row-extra {
+    color: var(--muted);
+}

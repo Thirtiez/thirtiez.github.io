@@ -14,7 +14,7 @@ const PROJECTS = [
     image: 'assets/images/projects/zuru.avif',
     imageAlt: 'Rendered model of a modern house designed in Zuru\'s BIM software',
     summary: 'Real-time BIM software for designing a home — and having an automated factory build it.',
-    role: 'Engineer on the team that owns the drawing features, and part of the team exploring AI-assisted development.',
+    role: 'Engineer on the team that owns the drawing features, and member of the AI Enabling team that brought AI-assisted development to the other teams, one team at a time.',
     tech: ['Unreal Engine 5', 'C++'],
     platforms: ['Windows', 'macOS'],
     tags: ['PC'],
