@@ -105,6 +105,8 @@ strong {
 .cv-name {
     font: 700 26pt/1.05 var(--font-display);
     letter-spacing: -0.02em;
+    /* Wide enough that PDF text extractors (ATS parsers) see the space. */
+    word-spacing: 0.12em;
 }
 
 .cv-role {
