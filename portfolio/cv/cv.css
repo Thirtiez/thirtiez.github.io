@@ -221,23 +221,18 @@ strong {
 }
 
 /* ---------- Label / value rows (skills, education) ---------- */
-/* Key and value share one text line so parsers read them together. */
-.rows li {
-    padding-left: 32mm;
-    text-indent: -32mm;
-}
-
+/* Key and value flow as one sentence. An aligned key column reads as a
+   separate text column to PDF parsers, which then list every key before
+   every value. */
 .rows li+li {
     margin-top: 1mm;
 }
 
 .row-key {
-    display: inline-block;
-    width: 32mm;
-    text-indent: 0;
     font-weight: 600;
 }
 
-.row-extra {
+.row-date {
     color: var(--muted);
 }
+
