@@ -251,7 +251,7 @@ const PROJECTS = [
     org: 'Master\'s thesis with Altec',
     category: 'university',
     image: 'assets/images/projects/stars.webp',
-    imageAlt: 'A glowing, textured star rendered up close against a field of distant stars',
+    imageAlt: 'A glowing, textured star rendered up close against distant stars, beside a panel of its catalogue data',
     summary: 'An app for exploring real astronomical data at true scale, from kilometers to parsecs.',
     details: ['Built from scratch on the Hipparcos catalogue (100,000+ stars), designed to scale up to Gaia\'s billions.'],
     tech: ['Unity', 'C#'],
